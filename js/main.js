@@ -102,16 +102,9 @@ function showOptions() {
     document.getElementById("options").classList.toggle("hidden");
 }
 
-// Logic for "Hide Closed" Button
-document.getElementById("hideButton").addEventListener("click", hideClosed);
+// Logic for "Hide Closed" Checkbox
+document.getElementById("hideButton").addEventListener("change", hideClosed);
 function hideClosed() {
-    const buttonText = document.getElementById("hideButton").innerText;
-    if (buttonText === "Hide Closed Restaurants") {
-        document.getElementById("hideButton").innerText = "Show All Restaurants";
-    } else {
-        document.getElementById("hideButton").innerText = "Hide Closed Restaurants";
-    }
-
     todays.forEach(today => {
         if (today.parentNode.classList.contains("closed")) {
             today.parentNode.parentNode.parentNode.parentNode.classList.toggle("hidden");

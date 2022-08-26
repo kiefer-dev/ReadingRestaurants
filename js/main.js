@@ -80,6 +80,8 @@ function hideClosed() {
 // Logic for viewing specific restaurant
 document.getElementById("restaurantSelectDropdown").addEventListener("change", viewSpecific)
 function viewSpecific() {
+    // Reset the restaurant style selection
+    document.getElementById("styleSelectDropdown").selectedIndex = 0;
     // Save the current restaurant selection in the selection variable
     const selection = document.getElementById("restaurantSelectDropdown").value;
     // Retrieve each of the restaurant tiles and save them in the tiles variable
@@ -105,6 +107,8 @@ function viewSpecific() {
 // Logic for viewing specific styles of restaurant
 document.getElementById("styleSelectDropdown").addEventListener("change", viewStyle)
 function viewStyle() {
+    // Reset the specific restaurant selection
+    document.getElementById("restaurantSelectDropdown").selectedIndex = 0;
     // Save the current style selection in the selection variable
     const selection = document.getElementById("styleSelectDropdown").value;
     // Retrieve each of the restaurant tiles and save them in the tiles variable

@@ -76,9 +76,6 @@ hoursArray.forEach(hours => {
             }
         })
 
-        console.log(openingClosing)
-        console.log(currentTime)
-
         if (openingClosing[0] > currentTime || currentTime >= openingClosing[1]) {
             hours.parentNode.classList.add("closed");
         }

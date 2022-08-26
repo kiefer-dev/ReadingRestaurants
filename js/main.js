@@ -101,3 +101,28 @@ function viewSpecific() {
         })
     }
 }
+
+// Logic for viewing specific styles of restaurant
+document.getElementById("styleSelectDropdown").addEventListener("change", viewStyle)
+function viewStyle() {
+    // Save the current style selection in the selection variable
+    const selection = document.getElementById("styleSelectDropdown").value;
+    // Retrieve each of the restaurant tiles and save them in the tiles variable
+    const tiles = document.querySelectorAll("a");
+    
+    if (selection !== "all") {
+        tiles.forEach(tile => {
+            // clear the hidden class from all tiles to reset
+            tile.classList.remove("hidden");
+            // add the hidden class to all tiles except selected restaurant
+            if (!tile.classList.contains(selection)) {
+                tile.classList.add("hidden");
+            }
+        })
+    } else {
+        tiles.forEach(tile => {
+            // clear the hidden class from all tiles to reset
+            tile.classList.remove("hidden");
+        })
+    }
+}

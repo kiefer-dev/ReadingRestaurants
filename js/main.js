@@ -1,5 +1,6 @@
 // Get the current date
 let currentDate = new Date();
+
 const month = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 
 // Assign the current day of the week
@@ -42,7 +43,21 @@ const todays = document.querySelectorAll(dayOfWeekClass);
 // Loop through the array of each weekday element and add the today class to it
 todays.forEach(day => day.classList.add('today'));
 
+// Get the current hour
+const currentHour = currentDate.getHours();
+// Get an array of each day's time tds
+const hoursArray = document.querySelectorAll(".hours");
+hoursArray.forEach(hours => {
+    if (hours.innerText !== "—") { // if we're looking at a day that the restaurant is open
+        // Get the closing hour
+        let closingHour = parseInt(hours.innerText.slice(hours.innerText.indexOf(" - ") + 3, -2)) + 12;
+        if (currentHour >= closingHour) {
+            hours.parentNode.classList.add("closed");
+        }
 
+        // TODO: Account for half-hour closing times
+    }
+})
 
 
 

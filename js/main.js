@@ -1,8 +1,8 @@
-
+// Get the current date
 let currentDate = new Date();
 const month = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
 
-// Assign the day of the week
+// Assign the current day of the week
 switch (currentDate.getDay()) {
     case 0:
         dayOfWeek = "Sunday";

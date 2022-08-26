@@ -112,6 +112,9 @@ tr:last-of-type td:last-of-type {
      color: #423c2c;
 }
 
+a {
+     text-decoration: none;
+}
 
 
 /******************************************

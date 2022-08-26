@@ -76,3 +76,28 @@ function hideClosed() {
         }
     })
 }
+
+// Logic for viewing specific restaurant
+document.getElementById("restaurantSelectDropdown").addEventListener("change", viewSpecific)
+function viewSpecific() {
+    // Save the current restaurant selection in the selection variable
+    const selection = document.getElementById("restaurantSelectDropdown").value;
+    // Retrieve each of the restaurant tiles and save them in the tiles variable
+    const tiles = document.querySelectorAll("a");
+    
+    if (selection !== "all") {
+        tiles.forEach(tile => {
+            // clear the hidden class from all tiles to reset
+            tile.classList.remove("hidden");
+            // add the hidden class to all tiles except selected restaurant
+            if (tile.id !== selection) {
+                tile.classList.add("hidden");
+            }
+        })
+    } else {
+        tiles.forEach(tile => {
+            // clear the hidden class from all tiles to reset
+            tile.classList.remove("hidden");
+        })
+    }
+}

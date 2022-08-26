@@ -131,6 +131,7 @@ tr:last-of-type td:last-of-type {
 button {
      width: 150px;
      text-align: center;
+     margin: 10px 0 10px 0;
 }
 select {
      width: 200px;
@@ -139,9 +140,10 @@ select {
      text-align: center;
 }
 #options {
-     border: 1px solid #f2d492;
+     /* border: 1px solid #f2d492; */
      display: flex;
      flex-direction: column;
      align-items: center;
      gap: 15px;
+     background: #f2d492;
 }

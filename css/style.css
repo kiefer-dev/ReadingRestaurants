@@ -134,13 +134,16 @@ a {
 button {
      width: 150px;
      text-align: center;
-     margin: 10px 0 10px 0;
 }
 select {
      width: 200px;
 }
 #optionsArea {
      text-align: center;
+     padding: 10px;
+}
+#optionsArea div {
+     padding: 5px;
 }
 #options {
      /* border: 1px solid #f2d492; */

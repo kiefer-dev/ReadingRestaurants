@@ -43,45 +43,46 @@ const todays = document.querySelectorAll(dayOfWeekClass);
 // Loop through the array of each weekday element and add the today class to it
 todays.forEach(day => day.classList.add('today'));
 
-// Get the current hour
-// const currentHour = currentDate.getHours();
-// // Get the current minutes converted to a decimal for comparison to half-hours
-// const currentMinsDecimal = currentDate.getMinutes() / 60;
-const currentTime = currentDate.getHours() + (currentDate.getMinutes() / 60);
-// Get an array of each day's time tds
-const hoursArray = document.querySelectorAll(".hours");
-hoursArray.forEach(hours => {
-    if (hours.innerText !== "—") { // if we're looking at a day that the restaurant is open
-        // Get the opening and closing hour strings in an array
-        let openingClosingStr = hours.innerText.split(" — ");
-        // Map those to numbers, if it's a half-hour then add .5 for comparison to current mins
-        let openingClosing = openingClosingStr.map(time => {
-            if (time.length <= 3) { //if it's a whole hour
-                if (time[time.length-1] === "a") { // AM
-                    // if it's 12am return 24, else return the time
-                    return time === "12a" ? 24 : +time.slice(0, time.indexOf("a"))
-                } else { // PM
-                    // if it's 12pm return 12, else return the time + 12
-                    return time === "12p" ? 12 : +time.slice(0, time.indexOf("p")) + 12
-                }
-            } else { //if it's a half hour
-                if (time[time.length-1] === "a") { // AM
-                    // if it's 12:30am return 24.5, else return the time
-                    return time === "12:30a" ? 24.5 : +time.slice(0, time.indexOf(":")) + .5
-                } else { // PM
-                    // if it's 12:30pm return 12.5, else return the time + 12
-                    return time === "12:30p" ? 12.5 : +time.slice(0, time.indexOf(":")) + 12.5
-                }
-                // return +time.slice(0, time.indexOf(":")) + .5
-            }
-        })
+// TODO: fix hourly functionality.
+// // Get the current hour
+// // const currentHour = currentDate.getHours();
+// // // Get the current minutes converted to a decimal for comparison to half-hours
+// // const currentMinsDecimal = currentDate.getMinutes() / 60;
+// const currentTime = currentDate.getHours() + (currentDate.getMinutes() / 60);
+// // Get an array of each day's time tds
+// const hoursArray = document.querySelectorAll(".hours");
+// hoursArray.forEach(hours => {
+//     if (hours.innerText !== "—") { // if we're looking at a day that the restaurant is open
+//         // Get the opening and closing hour strings in an array
+//         let openingClosingStr = hours.innerText.split(" — ");
+//         // Map those to numbers, if it's a half-hour then add .5 for comparison to current mins
+//         let openingClosing = openingClosingStr.map(time => {
+//             if (time.length <= 3) { //if it's a whole hour
+//                 if (time[time.length-1] === "a") { // AM
+//                     // if it's 12am return 24, else return the time
+//                     return time === "12a" ? 24 : +time.slice(0, time.indexOf("a"))
+//                 } else { // PM
+//                     // if it's 12pm return 12, else return the time + 12
+//                     return time === "12p" ? 12 : +time.slice(0, time.indexOf("p")) + 12
+//                 }
+//             } else { //if it's a half hour
+//                 if (time[time.length-1] === "a") { // AM
+//                     // if it's 12:30am return 24.5, else return the time
+//                     return time === "12:30a" ? 24.5 : +time.slice(0, time.indexOf(":")) + .5
+//                 } else { // PM
+//                     // if it's 12:30pm return 12.5, else return the time + 12
+//                     return time === "12:30p" ? 12.5 : +time.slice(0, time.indexOf(":")) + 12.5
+//                 }
+//                 // return +time.slice(0, time.indexOf(":")) + .5
+//             }
+//         })
 
-        if (openingClosing[0] > currentTime || currentTime >= openingClosing[1]) {
-            hours.parentNode.classList.add("closed");
-        }
+//         if (openingClosing[0] > currentTime || currentTime >= openingClosing[1]) {
+//             hours.parentNode.classList.add("closed");
+//         }
 
-    }
-})
+//     }
+// })
 
 
 
